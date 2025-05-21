@@ -1,0 +1,241 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background: white;
+  color: #1e1e1e;
+  overflow-x: hidden;
+}
+
+/* Layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+section {
+  transition: all 0.3s ease-in-out;
+}
+header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2a6fa1;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #c71515;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a:hover {
+  color: #34a53a;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #636566, #000000);
+  color: rgb(255, 255, 255);
+  padding: 5rem 0;
+  text-align: center;
+}
+.hero-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.btn-primary {
+  background-color: whitesmoke;
+  color: #000000;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background 0.3s, color 0.3s, transform 0.1s ease;
+  display: inline-block;
+  user-select: none;
+}
+.btn-primary:hover {
+  background: linear-gradient(#34a53a,#c71515);
+  color: white;
+}
+.btn-primary:active {
+  transform: scale(0.96);
+}
+
+/* Shared Section Header */
+.section-header {
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+.section-header h3 {
+  font-size: 2rem;
+  color: #000000;
+}
+
+/* Cards Layout */
+.destination-grid, .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0 4rem;
+}
+.card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: #34a53a,#c71515;
+  padding: 2rem;
+  text-align: center;
+  font-weight: 500;
+  color: #444;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.card img.profile:hover {
+  transform: scale(1.02);
+}
+
+.custom-line {
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to right, #34a53a, #c71515);
+  border: none;
+  margin: 2rem auto;
+  border-radius: 2px;
+}
+
+
+/* Blog Section */
+.blog {
+  background-color: #f0f6fb;
+}
+.blog .card {
+  text-align: left;
+}
+
+/* About Section */
+.about {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+.about .container {
+  max-width: 800px;
+  text-align: center;
+}
+.about p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 0;
+  background-color: #eaf3f9;
+}
+.contact form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact input, .contact textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.contact input:focus, .contact textarea:focus {
+  outline: none;
+  border-color: #2a6fa1;
+}
+.contact button {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #636566, #000000);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s ease;
+}
+.contact button:hover {
+  background: linear-gradient(#34a53a,#c71515);
+}
+.contact button:active {
+  transform: scale(0.95);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #636566, #000000);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.95rem;
+}

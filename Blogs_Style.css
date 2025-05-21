@@ -1,0 +1,205 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background: white;
+  color: #1e1e1e;
+  overflow-x: hidden;
+}
+
+/* Layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+section {
+  transition: all 0.3s ease-in-out;
+}
+header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2a6fa1;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #c71515;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a:hover {
+  color: #34a53a;
+}
+
+
+/* Blog Section */
+.blog {
+  background-color: #f0f6fb;
+}
+
+
+.edit-btn, .delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.share-buttons {
+  margin-top: 30px;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.share-buttons span {
+  font-weight: 500;
+}
+
+.share-buttons a {
+  text-decoration: none;
+  padding: 8px 8px;
+  border-radius: 7px;
+  font-weight: 700;
+  color: black;
+  transition: 0.3s;
+}
+
+.share-buttons a:hover {
+  opacity: 0.85;
+}
+
+.blog-post {
+  max-width: 1000px;
+  margin: 80px auto;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+  color: #2c3e50;
+}
+
+.blog-post-image {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.blog-post small {
+  color: #888;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.blog-post img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.blog-post p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.post-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.card img.profile:hover {
+  transform: scale(1.02);
+}
+
+.custom-line {
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to right, #34a53a, #c71515);
+  border: none;
+  margin: 2rem auto;
+  border-radius: 2px;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #636566, #000000);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+footer .container {
+  max-width: 1200px;
+}
